@@ -1,10 +1,10 @@
 # Premier League Match Prediction - FBREF Data Pipeline
 
-A comprehensive web scraping, data processing, and ML prediction pipeline for Premier League football statistics from [FBREF](https://fbref.com/). Designed by experienced Data Scientists and ML Engineers for building accurate match outcome prediction models.
+This is my end-to-end pipeline for scraping Premier League stats from [FBREF](https://fbref.com/), engineering features, and training models to predict match outcomes. I built it to be practical, readable, and easy to extend as I experiment with new features and models.
 
 ## 🎯 Project Overview
 
-This project scrapes, processes, and engineers features from FBREF's extensive Premier League statistics to build ML models that predict match outcomes (Win/Draw/Loss).
+The pipeline scrapes, processes, and engineers features from FBREF’s Premier League statistics to train ML models that predict match outcomes (Win/Draw/Loss).
 
 ### Key Results
 
@@ -18,17 +18,17 @@ This project scrapes, processes, and engineers features from FBREF's extensive P
 
 ### Key Features
 
-- **Robust Selenium-based scraper** that bypasses 403 errors and anti-scraping measures
+- **Robust Selenium-based scraper** that handles 403s and common anti-scraping blocks
 - **Multi-season support** (2020-2021 to 2025-2026)
-- **Comprehensive table coverage** - 17 statistical categories per season
+- **Comprehensive table coverage** — 17 statistical categories per season
 - **Advanced feature engineering** including ELO ratings, form metrics, and differential features
-- **Ensemble ML models** - Random Forest, XGBoost, LightGBM with weighted voting
-- **Match prediction CLI** - Predict upcoming matches with probability estimates
-- **Production-ready code** with proper error handling and logging
+- **Ensemble ML models** — Random Forest, XGBoost, LightGBM with weighted voting
+- **Match prediction CLI** — Predict upcoming matches with probability estimates
+- **Production-ready code** with solid error handling and logging
 
 ## 📊 Data Sources (FBREF Tables)
 
-Based on deep football analytics expertise, we scrape the following tables, prioritized by predictive value for match outcomes:
+I scrape the following tables, prioritized by predictive value for match outcomes:
 
 ### High Importance (Core Predictors)
 
@@ -288,13 +288,15 @@ The processed dataset supports multiple prediction tasks:
 
 ## ⚠️ Important Notes
 
-1. **Rate Limiting**: FBREF has rate limits. The scraper uses conservative delays (4-8 seconds) to be respectful.
+1. **FBREF data update (Jan 2026)**: OPTA requested FBREF to remove advanced stats, so the scraping solution in this repository no longer works for advanced tables. The raw and processed datasets used in this project are already included in this repository. See the official update: https://www.sports-reference.com/blog/2026/01/fbref-stathead-data-update/
 
-2. **Data Accuracy**: The scraper extracts data exactly as displayed on FBREF. Multi-level headers are properly parsed.
+2. **Rate Limiting**: FBREF has rate limits. The scraper uses conservative delays (4-8 seconds) to be respectful.
 
-3. **Legal Considerations**: This tool is for personal/educational use. Respect FBREF's terms of service.
+3. **Data Accuracy**: The scraper extracts data exactly as displayed on FBREF. Multi-level headers are properly parsed.
 
-4. **Storage**: Each season's data is ~1-2 MB. Full dataset with all seasons: ~15-20 MB.
+4. **Legal Considerations**: This tool is for personal/educational use. Respect FBREF's terms of service.
+
+5. **Storage**: Each season's data is ~1-2 MB. Full dataset with all seasons: ~15-20 MB.
 
 ## 🐛 Troubleshooting
 
@@ -320,6 +322,4 @@ Contributions welcome!
 
 ---
 
-Built with ⚽ by Data Scientists who love football analytics.
-
-*Last Updated: January 2026*
+*Last Updated: February 2026*
