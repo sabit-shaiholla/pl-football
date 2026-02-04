@@ -2,6 +2,18 @@
 
 This is my end-to-end pipeline for scraping Premier League stats from [FBREF](https://fbref.com/), engineering features, and training models to predict match outcomes. I built it to be practical, readable, and easy to extend as I experiment with new features and models.
 
+## ⚠️ Important Notes
+
+1. **FBREF data update (Jan 2026)**: OPTA requested FBREF to remove advanced stats, so the scraping solution in this repository no longer works for advanced tables. The raw and processed datasets used in this project are already included in this repository. See the official update: https://www.sports-reference.com/blog/2026/01/fbref-stathead-data-update/
+
+2. **Rate Limiting**: FBREF has rate limits. The scraper uses conservative delays (4-8 seconds) to be respectful.
+
+3. **Data Accuracy**: The scraper extracts data exactly as displayed on FBREF. Multi-level headers are properly parsed.
+
+4. **Legal Considerations**: This tool is for personal/educational use. Respect FBREF's terms of service.
+
+5. **Storage**: Each season's data is ~1-2 MB. Full dataset with all seasons: ~15-20 MB.
+
 ## 🎯 Project Overview
 
 The pipeline scrapes, processes, and engineers features from FBREF’s Premier League statistics to train ML models that predict match outcomes (Win/Draw/Loss).
@@ -285,18 +297,6 @@ The processed dataset supports multiple prediction tasks:
 
 - [ML Pipeline Documentation](docs/ML_PIPELINE_DOCUMENTATION.md) - Complete guide to training and predictions
 - [Feature Engineering Reference](docs/FEATURE_ENGINEERING_ML_REFERENCE.md) - Detailed feature descriptions
-
-## ⚠️ Important Notes
-
-1. **FBREF data update (Jan 2026)**: OPTA requested FBREF to remove advanced stats, so the scraping solution in this repository no longer works for advanced tables. The raw and processed datasets used in this project are already included in this repository. See the official update: https://www.sports-reference.com/blog/2026/01/fbref-stathead-data-update/
-
-2. **Rate Limiting**: FBREF has rate limits. The scraper uses conservative delays (4-8 seconds) to be respectful.
-
-3. **Data Accuracy**: The scraper extracts data exactly as displayed on FBREF. Multi-level headers are properly parsed.
-
-4. **Legal Considerations**: This tool is for personal/educational use. Respect FBREF's terms of service.
-
-5. **Storage**: Each season's data is ~1-2 MB. Full dataset with all seasons: ~15-20 MB.
 
 ## 🐛 Troubleshooting
 
